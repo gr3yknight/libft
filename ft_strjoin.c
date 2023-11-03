@@ -41,11 +41,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
     fString[i + j] = '\0';
     return (fString);
 }
-
-int main()
-{
-    char *s1 = "Hello ";
-    char *s2 = "everyone";
-    printf("%s", ft_strjoin(s1, s2));
-    return (0);
-}
