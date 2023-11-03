@@ -6,7 +6,7 @@
 /*   By: hatalhao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:24:52 by hatalhao          #+#    #+#             */
-/*   Updated: 2023/11/03 17:28:46 by hatalhao         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:37:23 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
 	{
 		t = str1[i] - str2[i];
 		if (t != 0)
-			break;
+			break ;
 		else
 			i++;
 	}
