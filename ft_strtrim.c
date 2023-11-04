@@ -6,7 +6,7 @@
 /*   By: hatalhao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:13:28 by hatalhao          #+#    #+#             */
-/*   Updated: 2023/11/03 18:15:04 by hatalhao         ###   ########.fr       */
+/*   Updated: 2023/11/04 03:27:04 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	j;
 	unsigned int	len1;
 	unsigned int	len2;
-	char			*str1;
-	char			*str2;
-	char			*str3;
+	char			*str;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	str1 = (char *) s1;
-	str2 = (char *) set;
-	len1 = ft_strlen(str1);
-	len2 = ft_strlen(str2);
-	str3 = (char *) malloc (len1 * sizeof(char) + 1);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(set);
+	str = (char *) malloc ((len1 + 1) * sizeof(char));
 	i = 0;
 	j = 0;
 	while (i < len1)
 	{
-		if (ft_strncmp(&str1[i], str2, len2) == 0)
+		if (ft_strncmp(&s1[i], set, len2) == 0)
 			i += len2;
 		else
-			str3[j++] = str1[i++];
+			str[j++] = s1[i++];
 	}
-	str3[j] = '\0';
-	return (str3);
+	str[j] = '\0';
+	return (str);
 }
