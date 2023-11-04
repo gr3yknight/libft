@@ -6,7 +6,7 @@
 /*   By: hatalhao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:13:28 by hatalhao          #+#    #+#             */
-/*   Updated: 2023/11/04 03:27:04 by hatalhao         ###   ########.fr       */
+/*   Updated: 2023/11/04 03:44:33 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	str[j] = '\0';
 	return (str);
+}
+
+int main()
+{
+	char	*s1 = "  LXNNNYY  pepe  YYYNLX   ";
+	char	*s2 = " XYYYYLN";
+	printf("%s",ft_strtrim(s1, s2));
+	return (0);
 }
