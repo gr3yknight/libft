@@ -16,6 +16,8 @@ void	ft_bzero(void *s, size_t n)
 {
 	int	i;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	ft_memset(s, i, n);
 }
