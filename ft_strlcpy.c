@@ -6,7 +6,7 @@
 /*   By: hatalhao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:55:01 by hatalhao          #+#    #+#             */
-/*   Updated: 2023/11/05 05:30:18 by hatalhao         ###   ########.fr       */
+/*   Updated: 2023/11/05 05:48:03 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	len = ft_strlen(src);
 	if (size == 0 || dest == NULL)
 		return (len);
-	while (src[i] && i < size)
+	while (src[i] && i < size - 1)
 	{
 		dest[i] = src[i];
 		i++;
