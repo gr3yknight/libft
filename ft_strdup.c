@@ -16,8 +16,9 @@ char	*ft_strdup(char *src)
 {
 	int		i;
 	char	*duplicate;
-
-	duplicate = (char *) malloc (ft_strlen(src) * sizeof(char) + 1);
+	if (!src)
+		return NULL;
+	duplicate = (char *) malloc ((ft_strlen(src) + 1) * sizeof(char));
 	if (!duplicate)
 		return (NULL);
 	i = 0;
@@ -26,5 +27,6 @@ char	*ft_strdup(char *src)
 		duplicate[i] = src[i];
 		i++;
 	}
+	duplicate[i] = '\0'; 
 	return (duplicate);
 }

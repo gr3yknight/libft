@@ -23,15 +23,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	str1 = (char *) src;
 	str2 = (char *) dest;
 	i = 0;
-	if (str1 < str2 && str1 + n > str2)
+	if (str2 > str1)
 	{
-		while (str1[i] && i < n)
-		{
-			str2[i] = str1[i];
-			i++;
-		}
+		while (n--)
+			str2[n] = str1[n];
+		return (str2);
 	}
-	else
-		ft_memcpy(str2, str1, n);
-	return (str2);
+	ft_memcpy(str2, str1, n);
+	return (dest);
 }

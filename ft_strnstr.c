@@ -6,7 +6,7 @@
 /*   By: hatalhao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:05:16 by hatalhao          #+#    #+#             */
-/*   Updated: 2023/11/03 18:08:47 by hatalhao         ###   ########.fr       */
+/*   Updated: 2023/11/05 19:33:24 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	unsigned int	i;
 	unsigned int	j;
 
+	if (n == 0)
+		return (NULL);
 	i = 0;
 	j = 0;
 	if (n == 0)
