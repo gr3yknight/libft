@@ -6,7 +6,7 @@
 /*   By: hatalhao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:16:47 by hatalhao          #+#    #+#             */
-/*   Updated: 2023/11/03 23:27:00 by hatalhao         ###   ########.fr       */
+/*   Updated: 2023/11/04 20:58:39 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@
 #include <string.h>
 
 //Done
-int	    ft_isalpha(int c);
-int	    ft_isdigit(int c);
-int	    ft_isalnum(int c);
-int	    ft_isascii(int c);
-int	    ft_isprint(int c);
-int	    ft_toupper(int c);
-int     ft_tolower(int c);
-int	    ft_atoi(const char *nptr);
-int     ft_strncmp(const char *s1, const char *s2, size_t n);
-int	    ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_atoi(const char *nptr);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strdup(char *src);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
