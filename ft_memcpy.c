@@ -6,7 +6,7 @@
 /*   By: hatalhao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:29:38 by hatalhao          #+#    #+#             */
-/*   Updated: 2023/11/05 04:46:15 by hatalhao         ###   ########.fr       */
+/*   Updated: 2023/11/05 04:51:41 by hatalhao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		str2[i] = str1[i];
 		i++;
 	}
-	return (str2)
+	return (str2);
 }
