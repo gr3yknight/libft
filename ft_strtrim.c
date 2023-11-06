@@ -39,3 +39,18 @@
 // 	str[j] = '\0';
 // 	return (str);
 // }
+
+static int the_counter(char const *s, char const *set)
+{
+	
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str;
+	int		len;
+
+	len = 
+	str = (char *) malloc (len)
+	return (str)
+}
