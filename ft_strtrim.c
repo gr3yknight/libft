@@ -40,17 +40,42 @@
 // 	return (str);
 // }
 
-static int the_counter(char const *s, char const *set)
+static int	the_counter(char const *s, char const *set)
 {
-	
+	int	counter;
+	int i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	counter = 0;
+	while (s[i] && set[j])
+	{
+		if (s[i] == set[j])
+		{
+			i++;
+			counter++;
+			j = 0;
+		}
+		j++;
+	}
+	return (counter);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	int		len;
+	int		bln;
 
-	len = 
-	str = (char *) malloc (len)
-	return (str)
+	len = the_counter(s1, set);
+	str = (char *) malloc ((len + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	while (*str)
+	{
+		str = ;
+	}
+	str[len] = '\0';
+	return (str);
 }
