@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+
+
+//char	*ft_strtrim(char const *s1, char const *set)
 // {
 // 	unsigned int	i;
 // 	unsigned int	j;
@@ -37,4 +39,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 	str[j] = '\0';
 // 	return (str);
 // }
-static void	
