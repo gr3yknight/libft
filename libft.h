@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
-#include <unistd.h>
-#include <stdlib.h>
+# define LIBFT_H
+# include <unistd.h>
+# include <stdlib.h>
 
 //To Remove
-#include <stdio.h>
-#include <string.h>
+# include <stdio.h>
+# include <string.h>
 
 //Done
 int		ft_isalpha(int c);
