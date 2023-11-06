@@ -19,7 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char			*str2;
 
 	if (dest == NULL || src == NULL)
-		return (NULL);
+	return (NULL);
 	str1 = (char *) src;
 	str2 = (char *) dest;
 	i = 0;

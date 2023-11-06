@@ -13,27 +13,28 @@
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
-{
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	len1;
-	unsigned int	len2;
-	char			*str;
+// {
+// 	unsigned int	i;
+// 	unsigned int	j;
+// 	unsigned int	len1;
+// 	unsigned int	len2;
+// 	char			*str;
 
-	if (s1 == NULL || set == NULL)
-		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(set);
-	str = (char *) malloc ((len1 + 1) * sizeof(char));
-	i = 0;
-	j = 0;
-	while (i < len1)
-	{
-		if (ft_strncmp(&s1[i], set, len2) == 0)
-			i += len2;
-		else
-			str[j++] = s1[i++];
-	}
-	str[j] = '\0';
-	return (str);
-}
+// 	if (s1 == NULL || set == NULL)
+// 		return (NULL);
+// 	len1 = ft_strlen(s1);
+// 	len2 = ft_strlen(set);
+// 	str = (char *) malloc ((len1 + 1) * sizeof(char));
+// 	i = 0;
+// 	j = 0;
+// 	while (i < len1)
+// 	{
+// 		if (ft_strncmp(&s1[i], set, len2) == 0)
+// 			i += len2;
+// 		else
+// 			str[j++] = s1[i++];
+// 	}
+// 	str[j] = '\0';
+// 	return (str);
+// }
+static void	
