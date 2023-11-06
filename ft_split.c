@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hatalhao <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/06 03:44:27 by hatalhao          #+#    #+#             */
+/*   Updated: 2023/11/06 03:44:30 by hatalhao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char **ft_split(char const *s, char c)
 {
     if (s == NULL)
-        return NULL;
+        return (NULL);
 
     char    **str;
     int     counter;
@@ -34,7 +46,7 @@ char **ft_split(char const *s, char c)
 
     str = (char **)malloc((counter + 1) * sizeof(char *));
     if (str == NULL)
-        return NULL;
+        return (NULL);
 
     i = 0;
     while (*s)
@@ -57,7 +69,7 @@ char **ft_split(char const *s, char c)
     }
 
     str[counter] = NULL;
-    return str;
+    return (str);
 }
 
 int main()
