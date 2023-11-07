@@ -27,7 +27,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (n--)
 			str2[n] = str1[n];
-		return (str2);
+		return (dest);
 	}
 	ft_memcpy(str2, str1, n);
 	return (dest);
