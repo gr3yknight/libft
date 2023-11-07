@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/talhaoui/42_Cursus_REPO/libft",
-      "program": "/home/talhaoui/42_Cursus_REPO/libft/build/Debug/outDebug",
+      "cwd": "/Users/hatalhao/libft",
+      "program": "/Users/hatalhao/libft/a.out",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

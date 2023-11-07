@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 
 
 
@@ -39,7 +39,16 @@
 // 	str[j] = '\0';
 // 	return (str);
 // }
+// xyzxyzxyz r achid weld nass xyzzzzzxyz 8  21 substr(str, 8 , 21 - 8 + 1);
+//xyz
 
+int isTrimmable(char * str, char a){
+	while(*str){
+		if (a == *str)
+			return 1;
+	}
+	return 0;
+}
 static int	the_counter(char const *s, char const *set)
 {
 	int	counter;
@@ -66,7 +75,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	int		len;
-	int		bln;
+	//int		bln;
 
 	len = the_counter(s1, set);
 	str = (char *) malloc ((len + 1) * sizeof(char));
@@ -74,7 +83,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	while (*str)
 	{
-		str = ;
+		str = "asdkjh";
 	}
 	str[len] = '\0';
 	return (str);

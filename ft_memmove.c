@@ -32,3 +32,17 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	ft_memcpy(str2, str1, n);
 	return (dest);
 }
+
+int main()
+{
+	char src[] = "Hello everyone";
+	char dst[] = "Hey everybody";
+	//printf("%s\n", (char *)ft_memmove("Hi everyone", "Hello everybody", 4));
+	memmove(dst, src, 13);
+	printf("%s\n", dst);
+	char src1[] = "Hello everyone";
+	char dst1[] = "Hey everybody";
+	ft_memmove(dst1, src1, 13);
+	printf("%s\n", dst1);
+	return (0);
+}
