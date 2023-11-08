@@ -42,7 +42,8 @@
 // xyzxyzxyz r achid weld nass xyzzzzzxyz 8  21 substr(str, 8 , 21 - 8 + 1);
 //xyz
 
-static int	isTrimmable(char *str, char a){
+static int	isTrimmable(char *str, char a)
+{
 	while (*str)
 	{
 		if (a == *str)
@@ -75,13 +76,14 @@ static int	the_counter(char const *s, char const *set)
 
 static int	isEdge(char const *str, char *set)
 {
+	int i = 1;
 	while (*str)
 	{
 		if (*str == *set)
 			str++;
 		set++;
 	}
-	return (0);
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -89,7 +91,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 	int		len;
 
-	len = the_counter(s1, set);
+	len = ft_strlen(s1) - the_counter(s1, set);
 	
 	str[len] = '\0';
 	return (str);
