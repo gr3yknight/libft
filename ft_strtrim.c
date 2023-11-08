@@ -88,11 +88,12 @@ static int	isEdge(char const *str, char *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	int		len;
+	char			*str;
+	int				len;
+	unsigned int	x;
 
 	len = ft_strlen(s1) - the_counter(s1, set);
-	
+	ft_substr(s1, x, len);
 	str[len] = '\0';
 	return (str);
 }
