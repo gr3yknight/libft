@@ -112,6 +112,7 @@ static int	istrimmable(char const *str, char c)
 	{
 		if (*str == c)
 			return (1);
+		str++;
 	}
 	return (0);
 }
@@ -164,17 +165,25 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		frt;
 	int		lst;
+	int		len;
 	char	*str;
 
 	frt = (isfirst(s1, set));
 	lst = (islast(s1, set));
+	len = ft_strlen(s1);
 	str = (char *)malloc((ft_strlen(s1) - (frt + lst) + 1) * sizeof(char));
 	str = (char *)ft_memcpy(str, s1 + frt, ft_strlen(s1) - (frt + lst));
+	str[len - (frt + lst)] = '\0';
 	return (str);
 }
 
 int main()
 {
-	printf("%s", ft_strtrim("asdkjhsdf;lksdfiuy", "ayu"));
+	char *str;
+	char *set;
+
+	str = "asdkjhsdf;lksdfiuy";
+	set = "ayu";
+	printf("%s", ft_strtrim(str, set));
 	return(0);
 }
