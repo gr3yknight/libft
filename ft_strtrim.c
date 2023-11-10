@@ -1,11 +1,21 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hatalhao <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/10 07:25:57 by hatalhao          #+#    #+#             */
+/*   Updated: 2023/11/10 07:26:27 by hatalhao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char    *str;
-	int     i;
+	char	*str;
+	int		i;
 	int		e;
 
 	if (s1 == NULL && set == NULL)
@@ -18,6 +28,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		e--;
 	str = ft_substr(s1, i, e - i);
 	if (str == NULL)
-		return(NULL);
+		return (NULL);
 	return (str);
 }
