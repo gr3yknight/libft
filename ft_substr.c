@@ -41,3 +41,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ss[i] = '\0';
 	return (ss);
 }
+
+int main()
+{
+	printf("%s", ft_substr("HASD:LKASDKJHSDFOIUEWRlkj", 9, 50095));
+	return (0);
+}
