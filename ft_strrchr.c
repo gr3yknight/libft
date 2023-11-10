@@ -14,10 +14,10 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
+	int				i;
 	unsigned char	*str;
 
-	str = (unsigned char *) s; 
+	str = (unsigned char *) s;
 	i = ft_strlen(s);
 	while (i >= 0)
 	{

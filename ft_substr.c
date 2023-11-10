@@ -28,8 +28,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ss);
 	}
 	isleft = ft_strlen(s + start);
-    if (len > isleft)
-        len = isleft;
+	if (len > isleft)
+		len = isleft;
 	ss = (char *) malloc ((len + 1) * sizeof(char));
 	if (ss == NULL)
 		return (NULL);
