@@ -147,7 +147,7 @@ static int	islast(char const *str, char const *set)
 	i = 0;
 	counter = 0;
 	e = ft_strlen(str) - 1;
-	while (e >= 0)
+	while (e >= 0 || set[i])
 	{
 		if (istrimmable(str + e, set[i]) == 1)
 		{
