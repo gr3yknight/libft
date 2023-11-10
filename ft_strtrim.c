@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-
-
 //char	*ft_strtrim(char const *s1, char const *set)
 // {
 // 	unsigned int	i;
@@ -42,72 +40,141 @@
 // xyzxyzxyz r achid weld nass xyzzzzzxyz 8  21 substr(str, 8 , 21 - 8 + 1);
 //xyz
 
-static int	isTrimmable(char *str, char a)
+// static int	istrimmable(char *str, char a)
+// {
+// 	while (*str)
+// 	{
+// 		if (*str == a)
+// 			return (1);
+// 		str++;
+// 	}
+// 	return (0);
+// }
+// static int	the_counter(char const *s, char const *set)
+// {
+// 	int	counter;
+// 	int	i;
+// 	int	j;
+
+// 	i = 0;
+// 	e = ft_strlen(s);
+// 	counter = 0;
+// 	while (set[i])
+// 	{
+// 		if (istrimmable(*s, set[i]) == 1)
+// 			counter++;
+// 		i++;
+// 	}
+// 	return (counter);
+// }
+
+// static int	isEdge(char const *str, char c)
+// {
+// 	int	x;
+
+// 	x = 0;
+// 	while (*str)
+// 	{
+// 		if (istrimmable(str, c) == 1)
+// 		{
+// 			x++;
+// 			str++;
+// 		}
+// 		return (x);
+// 	}
+// }
+
+// char	*ft_strtrim(char const *s1, char const *set)
+// {
+// 	char			*str;
+// 	int				len;
+// 	unsigned int	x;
+// 	int				bln;
+// 	int				i;
+
+// 	x = 0;
+// 	bln = istrimmable(s1, set[i]);
+// 	while (!s1)
+// 	{
+// 		if (istrimmable == 1)
+// 			x++;
+// 		return (x);
+// 	}
+// 	len = ft_strlen(s1) - the_counter(s1, set);
+// 	str = ft_substr(s1, x, len);
+// 	str[len] = '\0';
+// 	return (str);
+// }
+
+static int	istrimmable(char const *str, char c)
 {
 	while (*str)
 	{
-		if (*str == a)
+		if (*str == c)
 			return (1);
-		str++;
 	}
 	return (0);
 }
-static int	the_counter(char const *s, char const *set)
+
+static int	isfirst(char const *str, char const *set)
 {
-	int	counter;
 	int	i;
-	int	j;
+	int	counter;
 
 	i = 0;
-	j = 0;
 	counter = 0;
-	while (s[i])
+	while (set[i])
 	{
-		if (s[i] == set[j])
+		if (istrimmable (str, set[i]) == 1)
 		{
-			i++;
 			counter++;
-			j = 0;
+			str++;
+			i = 0;
 		}
-		j++;
+		else
+			i++;
 	}
 	return (counter);
 }
 
-static int	isEdge(char const *str, char c)
+static int	islast(char const *str, char const *set)
 {
-	int	x;
+	int	e;
+	int	counter;
+	int	i;
 
-	x = 0;
-	while (*str)
+	i = 0;
+	counter = 0;
+	e = ft_strlen(str) - 1;
+	while (e >= 0)
 	{
-		if (isTrimmable == 1)
+		if (istrimmable(str + e, set[i]) == 1)
 		{
-			x++;
-			str++;
+			counter++;
+			e--;
+			i = 0;
 		}
-		return (x);
+		else
+			i++;
 	}
+	return (counter);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char			*str;
-	int				len;
-	unsigned int	x;
-	int				bln;
-	int				i;
+	int		frt;
+	int		lst;
+	char	*str;
 
-	x = 0;
-	bln = isTrimmable(s1, set[i]);
-	while (!s1)
-	{
-		if (isTrimmable == 1)
-			x++;
-		return (x);
-	}
-	len = ft_strlen(s1) - the_counter(s1, set);
-	str = ft_substr(s1, x, len);
-	str[len] = '\0';
+	frt = (isfirst(s1, set));
+	lst = (islast(s1, set));
+	str = (char *)malloc((ft_strlen(s1) - (frt + lst) + 1) * sizeof(char));
+	str = (char *)ft_memcpy(str, s1 + frt, ft_strlen(s1) - (frt + lst));
 	return (str);
+}
+
+int main()
+{
+	printf("%s", ft_strtrim("asdkjhsdf;lksdfiuy", "ayu"));
+	return(0);
 }
