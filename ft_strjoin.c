@@ -23,6 +23,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len2 = ft_strlen(s2);
 	len = len1 + len2;
 	str = (char *) malloc ((len + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
 	if (s1 == NULL && s2 == NULL)
 		str = NULL;
 	else if (s2 == NULL)

@@ -33,11 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ss = (char *) malloc ((len + 1) * sizeof(char));
 	if (ss == NULL)
 		return (NULL);
-	while (i < len && (s[start + i]))
-	{
-		ss[i] = s[start + i];
-		i++;
-	}
-	ss[i] = '\0';
+	ss = ft_memcpy(ss, s + start, len);
+	ss[len] = '\0';
 	return (ss);
 }
