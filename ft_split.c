@@ -44,7 +44,6 @@ char	**ft_split(char const *s, char c)
 	str = (char **)malloc((counter + 1) * sizeof(char *));
 	if (str == NULL)
 		return (NULL);
-
 	i = 0;
 	while (*s)
 	{
@@ -64,11 +63,10 @@ char	**ft_split(char const *s, char c)
 		else
 			s++;
 	}
-
 	str[counter] = NULL;
 	return (str);
 }
-
+/*
 int main()
 {
 	char    *str;
@@ -83,3 +81,4 @@ int main()
 	}
 	return (0);
 }
+*/
