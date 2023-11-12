@@ -17,8 +17,6 @@ char	*ft_strdup(char *src)
 	int		i;
 	char	*duplicate;
 
-	if (!src)
-		return (NULL);
 	duplicate = (char *) malloc ((ft_strlen(src) + 1) * sizeof(char));
 	if (!duplicate)
 		return (NULL);
