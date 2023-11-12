@@ -37,17 +37,18 @@ static int	word_count(char const *s, char c)
 	return (counter);
 }
 
-static char **fri_ol(char **str)
+static char	**fri_ol(char **str)
 {
-	int i;
+	int	i;
 
+	i = 0;
 	while (str[i])
 		free(str[i++]);
 	free(str);
-	return(NULL);
+	return (NULL);
 }
 
-static char **str_all_fill(char **str, char const *s, char c)
+static char	**str_all_fill(char **str, char const *s, char c)
 {
 	const char	*start;
 	int			i;
