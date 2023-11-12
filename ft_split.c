@@ -10,40 +10,103 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include "libft.h"
+
+// char	**ft_split(char const *s, char c)
+// {
+// 	char		**str;
+// 	int			counter;
+// 	int			in_word;
+// 	int			len;
+// 	int			i;
+// 	const char	*p;
+// 	const char	*start;
+
+// 	if (s == NULL)
+// 		return (NULL);
+// 	counter = 0;
+// 	in_word = 0;
+// 	p = s;
+// 	while (*p)
+// 	{
+// 		if (*p == c)
+// 			in_word = 0;
+// 		else if (in_word == 0)
+// 		{
+// 			counter++;
+// 			in_word = 1;
+// 		}
+// 		p++;
+// 	}
+// 	str = malloc((counter + 1) * sizeof(char *));
+// 	if (!str)
+// 		return (NULL);
+// 	i = 0;
+// 	while (*s)
+// 	{
+// 		if (*s != c)
+// 		{
+// 			start = s;
+// 			while (*s && *s != c)
+// 				s++;
+// 			len = s - start;
+// 			str[i] = (char *)malloc((len + 1) * sizeof(char));
+// 			if (!str[i])
+// 				return (NULL);
+// 			ft_memcpy(str[i], start, len);
+// 			str[i][len] = '\0';
+// 			i++;
+// 		}
+// 		else
+// 			s++;
+// 	}
+// 	str[counter] = NULL;
+// 	return (str);
+// }
+
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
-	char		**str;
 	int			counter;
 	int			in_word;
-	int			len;
-	int			i;
-	const char	*p;
-	const char	*start;
+	char const	*p;
 
 	if (s == NULL)
-		return (NULL);
+		return (0);
 	counter = 0;
 	in_word = 0;
-	p = (const char *) s;
+	p = s;
 	while (*p)
 	{
 		if (*p == c)
 			in_word = 0;
-		else
+		else if (in_word == 0)
 		{
-			if (in_word == 0)
-			{
-				counter++;
-				in_word = 1;
-			}
+			counter++;
+			in_word = 1;
 		}
 		p++;
 	}
-	str = (char **)malloc((counter + 1) * sizeof(char *));
-	if (str == NULL)
-		return (NULL);
+	return (counter);
+}
+
+static char **fri_ol(char **str)
+{
+	int i;
+
+	while (str[i])
+		free(str[i++]);
+	free(str);
+	return(NULL);
+}
+
+static char **khadija(char **str, char const *s, char c)
+{
+	const char	*start;
+	int			i;
+	int			len;
+
 	i = 0;
 	while (*s)
 	{
@@ -54,8 +117,8 @@ char	**ft_split(char const *s, char c)
 				s++;
 			len = s - start;
 			str[i] = (char *)malloc((len + 1) * sizeof(char));
-			if (str[i] == NULL)
-				return (NULL);
+			if (!str[i])
+				return (fri_ol(str));
 			ft_memcpy(str[i], start, len);
 			str[i][len] = '\0';
 			i++;
@@ -63,22 +126,31 @@ char	**ft_split(char const *s, char c)
 		else
 			s++;
 	}
-	str[counter] = NULL;
+	str[i] = NULL;
 	return (str);
 }
-/*
-int main()
-{
-	char    *str;
 
-	str = "   Hello world, is everything alright?";
-	char** ret = ft_split(str, ' ');
-	int i = 0;
-	while (ret[i])
-	{
-		printf("%s\n", ret[i]);
-		i++;
-	}
-	return (0);
+char	**ft_split(char const *s, char c)
+{
+	char		**str;
+
+	str = malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (!str)
+		return (NULL);
+	return (khadija(str, s, c));
 }
-*/
+
+// int main()
+// {
+// 	char    *str;
+
+// 	str = "   Hello world, is everything alright?";
+// 	char** ret = ft_split(str, ' ');
+// 	int i = 0;
+// 	while (ret[i])
+// 	{
+// 		printf("%s\n", ret[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
