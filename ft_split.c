@@ -10,60 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-
-// char	**ft_split(char const *s, char c)
-// {
-// 	char		**str;
-// 	int			counter;
-// 	int			in_word;
-// 	int			len;
-// 	int			i;
-// 	const char	*p;
-// 	const char	*start;
-
-// 	if (s == NULL)
-// 		return (NULL);
-// 	counter = 0;
-// 	in_word = 0;
-// 	p = s;
-// 	while (*p)
-// 	{
-// 		if (*p == c)
-// 			in_word = 0;
-// 		else if (in_word == 0)
-// 		{
-// 			counter++;
-// 			in_word = 1;
-// 		}
-// 		p++;
-// 	}
-// 	str = malloc((counter + 1) * sizeof(char *));
-// 	if (!str)
-// 		return (NULL);
-// 	i = 0;
-// 	while (*s)
-// 	{
-// 		if (*s != c)
-// 		{
-// 			start = s;
-// 			while (*s && *s != c)
-// 				s++;
-// 			len = s - start;
-// 			str[i] = (char *)malloc((len + 1) * sizeof(char));
-// 			if (!str[i])
-// 				return (NULL);
-// 			ft_memcpy(str[i], start, len);
-// 			str[i][len] = '\0';
-// 			i++;
-// 		}
-// 		else
-// 			s++;
-// 	}
-// 	str[counter] = NULL;
-// 	return (str);
-// }
-
 #include "libft.h"
 
 static int	word_count(char const *s, char c)
@@ -101,7 +47,7 @@ static char **fri_ol(char **str)
 	return(NULL);
 }
 
-static char **khadija(char **str, char const *s, char c)
+static char **str_all_fill(char **str, char const *s, char c)
 {
 	const char	*start;
 	int			i;
@@ -137,7 +83,7 @@ char	**ft_split(char const *s, char c)
 	str = malloc((word_count(s, c) + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
-	return (khadija(str, s, c));
+	return (str_all_fill(str, s, c));
 }
 
 // int main()
