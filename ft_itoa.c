@@ -12,6 +12,23 @@
 
 #include "libft.h"
 
+static char	*is_edge(int n)
+{
+	char	*str;
+	int		max;
+	int 	min;
+
+	max = 2147483647;
+	min = -2147483648;
+	if (n == max)
+		str = x;
+	if (n == min)
+		str = x;
+	if (n == 0)
+		str = 0 + 48;
+	return (str);
+}
+
 static int	ft_count(int n)
 {
 	int	ft_counter;
@@ -27,7 +44,7 @@ static int	ft_count(int n)
 	return (ft_counter);
 }
 
-static char	*ft_print(char *str, int n, int ft_counter)
+static char	*is_negative(char *str, int n, int ft_counter)
 {
 	int	i;
 
@@ -46,6 +63,20 @@ static char	*ft_print(char *str, int n, int ft_counter)
 	return (str);
 }
 
+static char	*is_positive(char *str, int n, int ft_counter)
+{
+	int	i;
+
+	i = ft_counter - 1;
+	while (i >= 0)
+	{
+		str[i] = n % 10 + 48;
+		n /= 10;
+		i--;
+	}
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
@@ -56,12 +87,17 @@ char	*ft_itoa(int n)
 	if (str == NULL)
 		return (NULL);
 	str[ft_counter] = '\0';
-	str = ft_print(str, n, ft_counter);
+	if (n < 0)
+		str = is_negative(str, n, ft_counter);
+	if (n > 0)
+		str = is_positive(str, n, ft_counter);
+	if (n == 0)
+		str = is_edge(n);
 	return (str);
 }
 
 int main()
 {
-	printf("%s\n", ft_itoa(-2147483648));
+	printf("[%s]\n", ft_itoa(0));
 	return (0);
 }
