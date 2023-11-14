@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-static int	ft_count(int n)
+static long	ft_count(long n)
 {
-	int	ft_counter;
+	long	ft_counter;
 
 	ft_counter = 0;
-		if (n < 0)
+	if (n <= 0)
 		ft_counter += 1;
-	while (n != 0)
+	while (n / 10 != 0)
 	{
 		n /= 10;
 		ft_counter++;
@@ -27,9 +27,9 @@ static int	ft_count(int n)
 	return (ft_counter);
 }
 
-static char	*is_negative(char *str, int n, int ft_counter)
+static char	*is_negative(char *str, long n, long ft_counter)
 {
-	int	i;
+	long	i;
 
 	i = ft_counter - 1;
 	n *= -1;
@@ -43,9 +43,9 @@ static char	*is_negative(char *str, int n, int ft_counter)
 	return (str);
 }
 
-static char	*is_positive(char *str, int n, int ft_counter)
+static char	*is_positive(char *str, long n, long ft_counter)
 {
-	int	i;
+	long	i;
 
 	i = ft_counter - 1;
 	while (i >= 0)
@@ -57,51 +57,23 @@ static char	*is_positive(char *str, int n, int ft_counter)
 	return (str);
 }
 
-static char	*is_edge(char *str, int n, int ft_counter)
-{
-	int		max;
-	int 	min;
-	int		i;
-
-	i = 0;
-	max = 2147483647;
-	min = -2147483648;
-	if (n == max)
-	{
-		n = 147483647;
-		str = is_positive(str, n, ft_counter);
-		str[i] = '2';
-	}
-	else if (n == min)
-		{
-			i = 2;
-			n *= -1;
-			n = 147483648;
-			str += i;
-			str = is_positive(str, n, ft_counter); 
-			str[--i] = '2';
-			str[--i] = '-';
-		}
-	return (str);
-}
-
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		ft_counter;
-	
-	ft_counter = ft_count(n);
+	long	ft_counter;
+	long	nb;
+
+	nb = n;
+	ft_counter = ft_count(nb);
 	str = malloc (sizeof(char) * (ft_counter + 1));
 	if (str == NULL)
 		return (NULL);
 	str[ft_counter] = '\0';
-	if (n == 0)
+	if (nb == 0)
 		*str = 0 + '0';
-	if (n < 0)
-		str = is_negative(str, n, ft_counter);
-	if (n > 0)
-		str = is_positive(str, n, ft_counter);
-	if (n == 2147483647 || n == -2147483648)
-		str = is_edge(str, n, ft_counter);
+	if (nb < 0)
+		str = is_negative(str, nb, ft_counter);
+	if (nb > 0)
+		str = is_positive(str, nb, ft_counter);
 	return (str);
 }
