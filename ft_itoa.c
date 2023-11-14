@@ -19,7 +19,7 @@ static long	ft_count(long n)
 	ft_counter = 0;
 	if (n <= 0)
 		ft_counter += 1;
-	while (n / 10 != 0)
+	while (n != 0)
 	{
 		n /= 10;
 		ft_counter++;
