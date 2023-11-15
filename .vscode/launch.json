@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/home/talhaoui/42_Cursus_REPO/libft",
-      "program": "/home/talhaoui/42_Cursus_REPO/libft/split",
+      "program": "/home/talhaoui/42_Cursus_REPO/libft/putnbr",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
