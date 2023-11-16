@@ -18,8 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		e;
 
-	if (s1 == NULL && set == NULL)
-		return (NULL);
+	if (!*s1)
+	 	return (ft_strdp(""));
 	i = 0;
 	e = ft_strlen(s1);
 	while (s1[i] && ft_strchr(set, s1[i]))
@@ -31,3 +31,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	return (str);
 }
+
+// int main()
+// {
+// 	printf("[%s]\n", ft_strtrim("", ""));
+// 	return (0);
+// }
