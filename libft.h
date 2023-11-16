@@ -50,8 +50,4 @@ size_t	ft_strlen(char const *str);
 size_t	ft_strlcat(char *dest, char const *src, size_t size);
 size_t	ft_strlcpy(char *dest, char const *src, size_t size);
 
-    //REMOVE
-        # include <stdio.h>
-        # include <string.h>
-
 #endif
