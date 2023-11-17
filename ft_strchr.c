@@ -14,8 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int				i;
-	int				len;
+	size_t			i;
+	size_t			len;
 	unsigned char	chr;
 
 	chr = c;

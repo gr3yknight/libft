@@ -14,7 +14,7 @@
 
 char	*ft_strdup(char const *src)
 {
-	int		i;
+	size_t	i;
 	char	*duplicate;
 
 	duplicate = (char *) malloc ((ft_strlen(src) + 1) * sizeof(char));
