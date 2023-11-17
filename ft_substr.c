@@ -18,8 +18,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	isleft;
 
+	if (!s)
+		return (0);
 	i = 0;
-	if (start >= ft_strlen(s) || (len == 0))
+	if (start >= ft_strlen(s) || !len)
 	{
 		ss = (char *) malloc ((1) * sizeof(char));
 		if (ss == NULL)

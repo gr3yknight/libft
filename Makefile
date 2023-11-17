@@ -11,9 +11,8 @@ ft_substr.c ft_isascii.c ft_putchar_fd.c ft_strlcat.c ft_tolower.c ft_isdigit.c 
 ft_putendl_fd.c ft_strlcpy.c ft_toupper.c ft_isprint.c ft_putnbr_fd.c ft_strlen.c
 
 OBJS=$(SRCS:.c=.o)
-$(NAME):
-		@$(CC) $(CFLAGS) -c $(SRCS)
-		@ar -rc $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+		ar -rc $(NAME) $(OBJS)
 
 .PHONY: all clean fclean re
 

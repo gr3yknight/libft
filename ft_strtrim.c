@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		e;
 
+	if (!s1 || !set)
+		return (NULL);
 	if (!*s1)
 		return (ft_strdup(""));
 	i = 0;
