@@ -13,7 +13,7 @@ ft_putendl_fd.c ft_strlcpy.c ft_toupper.c ft_isprint.c ft_putnbr_fd.c ft_strlen.
 OBJS=$(SRCS:.c=.o)
 $(NAME):
 		@$(CC) $(CFLAGS) -c $(SRCS)
-		ar -rc $(NAME) $(OBJS)
+		@ar -rc $(NAME) $(OBJS)
 
 .PHONY: all clean fclean re
 

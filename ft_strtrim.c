@@ -31,9 +31,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	return (str);
 }
-
-// int main()
-// {
-// 	printf("[%s]\n", ft_strtrim("", ""));
-// 	return (0);
-// }
