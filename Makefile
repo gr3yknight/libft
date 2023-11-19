@@ -10,6 +10,8 @@ ft_isalnum.c ft_memmove.c ft_striteri.c ft_strtrim.c ft_isalpha.c ft_memset.c ft
 ft_substr.c ft_isascii.c ft_putchar_fd.c ft_strlcat.c ft_tolower.c ft_isdigit.c \
 ft_putendl_fd.c ft_strlcpy.c ft_toupper.c ft_isprint.c ft_putnbr_fd.c ft_strlen.c
 
+# BSRCS += 
+
 OBJS=$(SRCS:.c=.o)
 $(NAME): $(OBJS)
 		ar -rc $(NAME) $(OBJS)

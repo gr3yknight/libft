@@ -31,6 +31,12 @@ int	ft_atoi(char const *nptr)
 	else if (nptr[i] == '+')
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		if (r < 0 && s < 0)
+			return (0);
+		else if (r < 0 && s > 0)
+			return (-1);
 		r = r * 10 + nptr[i++] - '0';
+	}
 	return (r * s);
 }

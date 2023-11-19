@@ -30,3 +30,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+// int	main() {
+// 	char* p1 = "a";
+// 	char* p2 = "a";
+
+// 	printf("[%p]\n", memchr(p1, 'a', 1));
+// 	printf("*************************\n");
+// 	printf("[%p]\n", ft_memchr(p1, 'a', 1));
+// 	return(0);
+// }
