@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hatalhao <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: talhaoui <talhaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:16:47 by hatalhao          #+#    #+#             */
-/*   Updated: 2023/11/04 20:58:39 by hatalhao         ###   ########.fr       */
+/*   Updated: 2023/11/24 16:37:23 by talhaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdio.h>
 # include <string.h>
 # include <limits.h>
+# include <stdarg.h>
+
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -29,6 +31,8 @@ int		ft_tolower(int c);
 int		ft_atoi(char const *nptr);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(char const *s1, char const *s2, size_t n);
+
+int     ft_printf(char const *, ...);
 
 char	*ft_itoa(int n);
 char	*ft_strdup(char const *src);
