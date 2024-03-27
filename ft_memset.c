@@ -22,9 +22,6 @@ void	*ft_memset(void *s, int c, size_t n)
 	a = c;
 	i = 0;
 	while (i < n)
-	{
-		str[i] = a;
-		i++;
-	}
+		str[i++] = a;
 	return (str);
 }

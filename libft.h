@@ -63,4 +63,13 @@ size_t	ft_strlen(char const *str);
 size_t	ft_strlcat(char *dest, char const *src, size_t size);
 size_t	ft_strlcpy(char *dest, char const *src, size_t size);
 
+typedef struct      s_list
+{
+    int             content;
+    struct s_list   *next;  
+}                   t_list;
+
+
+
+
 #endif
