@@ -63,13 +63,22 @@ size_t	ft_strlen(char const *str);
 size_t	ft_strlcat(char *dest, char const *src, size_t size);
 size_t	ft_strlcpy(char *dest, char const *src, size_t size);
 
-typedef struct      s_list
+//      LINKED LISTS
+
+typedef struct		s_list
 {
-    int             content;
-    struct s_list   *next;  
-}                   t_list;
+	int				content;
+	struct s_list	*next;  
+}					t_list;
 
+t_list	*ft_lstnew(int content);
+t_list	*ft_lstlast(t_list *lst);
 
+void	ft_lstdelone(t_list **lst);
+void	ft_lstclear(t_list **lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
+int		ft_lstsize(t_list *lst);
 
 #endif

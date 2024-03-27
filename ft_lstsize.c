@@ -12,17 +12,15 @@
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-    int counter;
+	int	counter;
 
-    if (!lst)
-        return (0);
-    counter = 0;
-    while (lst)
-    {
-        counter++;
-        lst = lst->next;
-    }
-    return (counter);
+	counter = 0;
+	while (lst)
+	{
+		counter++;
+		lst = lst->next;
+	}
+	return (counter);
 }
