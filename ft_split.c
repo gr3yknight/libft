@@ -37,7 +37,7 @@ static size_t	word_count(char const *s, char c)
 	return (counter);
 }
 
-static char	**fri_ol(char **str)
+static char	**free_arr(char **str)
 {
 	int	i;
 
@@ -65,7 +65,7 @@ static char	**str_all_fill(char **str, char const *s, char c)
 			len = s - start;
 			str[i] = (char *)malloc((len + 1) * sizeof(char));
 			if (!str[i])
-				return (fri_ol(str));
+				return (free_arr(str));
 			ft_memcpy(str[i], start, len);
 			str[i][len] = '\0';
 			i++;
